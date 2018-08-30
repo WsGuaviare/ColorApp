@@ -1,5 +1,6 @@
 package com.example.worldskills.colorapp.pantallas;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -73,11 +74,12 @@ public class Juego extends AppCompatActivity {
         for(int i=0;i<4;i++){
             juego.add("0");
         }
+        palabrasDesplegadas.setText(String.valueOf(Integer.valueOf(palabrasDesplegadas.getText().toString())+1));
         handler.postDelayed(runnable,3000);
         generarPalabra();
     }
     private void generarPalabra(){
-        Random rnd=new Random(SystemClock.currentThreadTimeMillis());
+        Random rnd=new Random(System.currentTimeMillis());
         int palabraRandom=rnd.nextInt(4);
         int colorRandom=rnd.nextInt(4);
         while(palabraRandom==colorRandom){
@@ -90,7 +92,7 @@ public class Juego extends AppCompatActivity {
         generarBotones();
     }
     private void generarBotones(){
-        Random rnd=new Random(SystemClock.currentThreadTimeMillis());
+        Random rnd=new Random(System.currentTimeMillis());
         for(int i=0;i<4;i++) {
             int botonRandom = rnd.nextInt(4);
             while (!juego.get(botonRandom).equals("0")){
@@ -113,5 +115,10 @@ public class Juego extends AppCompatActivity {
             }
         }
         llenarListas();
+    }
+    public void finalizar(){
+        if(intentos.equals("0")){
+            Intent intent=new Intent(Juego.this,Resultados.class)
+        }
     }
 }
