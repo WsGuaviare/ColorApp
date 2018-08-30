@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Juego extends AppCompatActivity {
+    int pausarClick=0;
     TextView tiempo,intentId,palabrasDesplegadas,palabrasCorrectas,intentos,palabra;
     Button boton1,boton2,boton3,boton4;
     ImageView volver,pausar;
@@ -53,6 +54,24 @@ public class Juego extends AppCompatActivity {
         palabrasDesplegadas.setText("0");
         intentos.setText("3");
         tiempo.setText("00:00");
+        pausar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pausarClick++;
+                if(pausarClick==1 || pausarClick==3) {
+                    handler.removeCallbacks(runnable);
+                    for (int i = 0; i < 4; i++) {
+                        botonIds.get(i).setEnabled(false);
+                    }
+                }
+                else if(pausarClick==2 || pausarClick==4){
+                    for (int i = 0; i < 4; i++) {
+                        botonIds.get(i).setEnabled(true);
+                    }
+                    llenarListas();
+                }
+            }
+        });
         //configuracion
         Crud crud=new Crud(this,"colores",null,1);
         crud.consultarConfiguracion(this,listaConfiguracion);
