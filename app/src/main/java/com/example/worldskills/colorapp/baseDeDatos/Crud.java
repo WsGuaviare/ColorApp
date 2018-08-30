@@ -17,7 +17,7 @@ public class Crud extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table tb_puntajes(id integer primary key autoincrement,puntaje integer)");
+        db.execSQL("create table tb_puntaje(id integer primary key autoincrement,puntaje integer)");
         db.execSQL("create table tb_configuracion(id integer primary key autoincrement,intTime integer,tiempo integer,intentos integer,tiempoPalabra integer,cDefault integer)");
         for(int i=0;i<2;i++) {
             ContentValues registro1 = new ContentValues();
@@ -44,7 +44,7 @@ public class Crud extends SQLiteOpenHelper{
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("drop table if exists tb_puntaje");
         db.execSQL("drop table if exists tb_configuracion");
-        db.execSQL("create table tb_puntajes(id integer primary key autoincrement,puntaje integer)");
+        db.execSQL("create table tb_puntaje(id integer primary key autoincrement,puntaje integer)");
         db.execSQL("create table tb_configuracion(id integer primary key autoincrement,intTime integer,tiempo integer,intentos integer,tiempoPalabra integer,cDefault integer)");
 
     }
@@ -69,7 +69,7 @@ public class Crud extends SQLiteOpenHelper{
         this.listaConfiguracion=listaConfiguracion;
         Crud crud=new Crud(context,"colores",null,1);
         SQLiteDatabase db=crud.getWritableDatabase();
-        Cursor cursor=db.rawQuery("select * from tb_puntaje",null);
+        Cursor cursor=db.rawQuery("select * from tb_configuracion",null);
         while (cursor.moveToNext()){
             listaConfiguracion.add(new ConfiguracionVo(cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4),cursor.getString(5)));
         }
