@@ -44,7 +44,7 @@ public class Resultados extends AppCompatActivity {
         Crud crud=new Crud(this,"colores",null,1);
         crud.consultarPuntajes(this,listaPuntajes);
         for(int i=0;i<4;i++){
-            if(palabrasCorrectas.getText().toString().equals(listaPuntajes.get(i))){
+            if(Integer.valueOf(palabrasCorrectasInt)>=Integer.valueOf(listaPuntajes.get(i))){
                 ContentValues registro=new ContentValues();
                 registro.put("puntaje",palabrasCorrectasInt);
                 for (int j=i;j<3;j++){

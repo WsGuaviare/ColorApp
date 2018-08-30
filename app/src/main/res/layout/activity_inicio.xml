@@ -23,14 +23,14 @@
         app:srcCompat="@drawable/btn_iniciar" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/puntajesId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         app:srcCompat="@drawable/btn_puntajes" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/configuracionId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
