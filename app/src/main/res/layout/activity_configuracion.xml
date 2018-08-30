@@ -42,17 +42,38 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
+        <Button
+            android:id="@+id/cargarDefault"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="cargar partida por defecto" />
+
+        <Button
+            android:id="@+id/cargarPersonalizada"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="cargar partida personalizada" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center_vertical"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text="Duración de la partida:" />
         </LinearLayout>
@@ -72,7 +93,6 @@
                 android:ems="10"
                 android:gravity="center_vertical"
                 android:inputType="number" />
-
         </LinearLayout>
 
     </LinearLayout>
@@ -111,6 +131,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="number" />
+
         </LinearLayout>
     </LinearLayout>
 
