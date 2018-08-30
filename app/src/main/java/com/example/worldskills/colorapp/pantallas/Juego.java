@@ -122,7 +122,10 @@ public class Juego extends AppCompatActivity {
     public void finalizar(){
         if(intentos.getText().toString().equals("0")){
             Intent intent=new Intent(Juego.this,Resultados.class);
-            intent.putExtra("puntaje",palabrasCorrectas.getText().toString());
+            intent.putExtra("palabrasCorrectas",palabrasCorrectas.getText().toString());
+            intent.putExtra("palabrasDesplegadas",palabrasDesplegadas.getText().toString());
+            //insertar tiempo
+            intent.putExtra("tiempo","01:15");
             startActivity(intent);
             finish();
         }
