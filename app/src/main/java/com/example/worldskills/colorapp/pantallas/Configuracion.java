@@ -61,8 +61,6 @@ public class Configuracion extends AppCompatActivity {
                 ContentValues cambiar=new ContentValues();
                 cambiar.put("cDefault","1");
                 crud.modificarBd(Configuracion.this,"tb_configuracion","1",cambiar);
-                ContentValues modificar=new ContentValues();
-                modificar.put("intTime");
             }
         });
     }
