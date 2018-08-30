@@ -63,11 +63,13 @@ public class Juego extends AppCompatActivity {
                     handler.removeCallbacks(runnable);
                     for (int i = 0; i < 4; i++) {
                         botonIds.get(i).setEnabled(false);
+                        pausar.setImageResource(R.drawable.reanudar);
                     }
                 }
                 else if(pausarClick==2 || pausarClick==4){
                     for (int i = 0; i < 4; i++) {
                         botonIds.get(i).setEnabled(true);
+                        pausar.setImageResource(R.drawable.pausar);
                     }
                     llenarListas();
                 }
