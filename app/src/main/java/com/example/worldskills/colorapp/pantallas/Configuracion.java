@@ -36,6 +36,6 @@ public class Configuracion extends AppCompatActivity {
         });
         Crud crud=new Crud(this,"colores",null,1);
         crud.consultarConfiguracion(this,listaConfiguracion);
-        
+
     }
 }

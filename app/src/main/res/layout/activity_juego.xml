@@ -57,7 +57,7 @@
                 android:id="@+id/pausar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_media_pause" />
+                app:srcCompat="@drawable/pausar" />
 
         </LinearLayout>
 
