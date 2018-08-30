@@ -1,5 +1,6 @@
 package com.example.worldskills.colorapp.pantallas;
 
+import android.content.ContentValues;
 import android.provider.Telephony;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -42,7 +43,19 @@ public class Resultados extends AppCompatActivity {
         porcentaje.setText(String.valueOf((Integer.valueOf(palabrasCorrectasInt)*100)/Integer.valueOf(palabrasDesplegadasInt))+"%");
         Crud crud=new Crud(this,"colores",null,1);
         crud.consultarPuntajes(this,listaPuntajes);
-        tiempo.setText(listaPuntajes.get(0));
+        for(int i=0;i<4;i++){
+            if(palabrasCorrectas.getText().toString().equals(listaPuntajes.get(i))){
+                ContentValues registro=new ContentValues();
+                registro.put("puntaje",palabrasCorrectasInt);
+                for (int j=i;j<3;j++){
+                    ContentValues registro1=new ContentValues();
+                    registro1.put("puntaje",listaPuntajes.get(j));
+                    crud.modificarBd(this,"tb_puntaje",String.valueOf(j+2),registro1);
+                }
+                crud.modificarBd(this,"tb_puntaje",String.valueOf(i+1),registro);
+                break;
+            }
+        }
 
     }
 }
