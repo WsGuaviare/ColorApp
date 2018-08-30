@@ -2,6 +2,7 @@ package com.example.worldskills.colorapp.pantallas;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
@@ -150,5 +151,24 @@ public class Juego extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+    }
+
+    public void temporizador(){
+        CountDownTimer iniciarTemporizador = new CountDownTimer(10000,1000) {
+            @Override
+            public void onTick(long l) {
+                long minutos = l / 1000;
+                long segundos = minutos % 60;
+                String minutosMostrados = String.format("%02d",minutos);
+                String segundosMostrados = String.format("%02d",segundos);
+                tiempo.setText("" + minutosMostrados + ":" + segundosMostrados);
+
+            }
+
+            @Override
+            public void onFinish() {
+                tiempo.setText("Paila!");
+            }
+        }.start();
     }
 }

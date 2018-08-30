@@ -23,6 +23,7 @@
                 android:id="@+id/volver"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="15dp"
                 app:srcCompat="?attr/actionModeCloseDrawable" />
         </LinearLayout>
 
@@ -44,7 +45,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="42dp"
                 android:gravity="center"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@android:color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -110,21 +112,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Palabras desplegadas:" />
+                android:text="Palabras desplegadas:"
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/palabrasCorrectas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Palabras correctas:" />
+                android:text="Palabras correctas:"
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/intentos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Intentos Faltantes:" />
+                android:text="Intentos Faltantes:"
+                android:textColor="@android:color/black" />
         </LinearLayout>
 
     </LinearLayout>
