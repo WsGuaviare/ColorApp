@@ -1,9 +1,13 @@
 package com.example.worldskills.colorapp.entidades;
 
 public class ConfiguracionVo {
-    int intTiempo,tiempo,intentos,tiempoPalabra,cDefault;
+    String intTiempo;
+    String tiempo;
+    String intentos;
+    String tiempoPalabra;
+    String cDefault;
 
-    public ConfiguracionVo(int intTiempo, int tiempo, int intentos, int tiempoPalabra, int cDefault) {
+    public ConfiguracionVo(String intTiempo, String tiempo, String intentos, String tiempoPalabra, String cDefault) {
         this.intTiempo = intTiempo;
         this.tiempo = tiempo;
         this.intentos = intentos;
@@ -11,43 +15,43 @@ public class ConfiguracionVo {
         this.cDefault = cDefault;
     }
 
-    public int getIntTiempo() {
+    public String getIntTiempo() {
         return intTiempo;
     }
 
-    public void setIntTiempo(int intTiempo) {
+    public void setIntTiempo(String  intTiempo) {
         this.intTiempo = intTiempo;
     }
 
-    public int getTiempo() {
+    public String getTiempo() {
         return tiempo;
     }
 
-    public void setTiempo(int tiempo) {
+    public void setTiempo(String tiempo) {
         this.tiempo = tiempo;
     }
 
-    public int getIntentos() {
+    public String getIntentos() {
         return intentos;
     }
 
-    public void setIntentos(int intentos) {
+    public void setIntentos(String intentos) {
         this.intentos = intentos;
     }
 
-    public int getTiempoPalabra() {
+    public String getTiempoPalabra() {
         return tiempoPalabra;
     }
 
-    public void setTiempoPalabra(int tiempoPalabra) {
+    public void setTiempoPalabra(String tiempoPalabra) {
         this.tiempoPalabra = tiempoPalabra;
     }
 
-    public int getcDefault() {
+    public String getcDefault() {
         return cDefault;
     }
 
-    public void setcDefault(int cDefault) {
+    public void setcDefault(String cDefault) {
         this.cDefault = cDefault;
     }
 }

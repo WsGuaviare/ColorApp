@@ -61,11 +61,24 @@ public class Crud extends SQLiteOpenHelper{
         while (cursor.moveToNext()){
             listaPuntajes.add(cursor.getString(1));
         }
+        cursor.close();
 
     }
     ArrayList<ConfiguracionVo> listaConfiguracion;
     public void consultarConfiguracion(Context context,ArrayList<ConfiguracionVo> listaConfiguracion){
         this.listaConfiguracion=listaConfiguracion;
-        
+        Crud crud=new Crud(context,"colores",null,1);
+        SQLiteDatabase db=crud.getWritableDatabase();
+        Cursor cursor=db.rawQuery("select * from tb_puntaje",null);
+        while (cursor.moveToNext()){
+            listaConfiguracion.add(new ConfiguracionVo(cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4),cursor.getString(5)));
+        }
+        cursor.close();
+
+    }
+    public void modificarBd(Context context,String table,String id,ContentValues registro){
+        Crud crud=new Crud(context,"colores",null,1);
+        SQLiteDatabase db=crud.getWritableDatabase();
+        db.update(table,registro,"id="+id,null);
     }
 }
