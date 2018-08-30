@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CEF5FF"
     android:orientation="vertical"
     tools:context=".pantallas.Resultados">
 
@@ -31,14 +32,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Palabras desplegadas:" />
+            android:text="Palabras desplegadas:"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/palabrasDesplegadasId"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -52,14 +57,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="palabras Correctas:" />
+            android:text="palabras Correctas:"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/palabrasCorrectasId"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -73,14 +82,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Tiempo Jugado:" />
+            android:text="Tiempo Jugado:"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/tiempoJugadoId"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -94,14 +107,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Porcentaje de acierto:" />
+            android:text="Porcentaje de acierto:"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/porcentajeId"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -115,6 +132,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#0071bc"
             android:text="regresar al inicio" />
     </LinearLayout>
 

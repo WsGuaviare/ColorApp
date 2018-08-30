@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CEF5FF"
     android:orientation="vertical"
     tools:context=".pantallas.Puntajes">
 
@@ -33,7 +34,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
             android:gravity="center"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/puntaje2Id"
@@ -41,7 +44,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
             android:gravity="center"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/puntaje3Id"
@@ -49,7 +54,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
             android:gravity="center"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/puntaje4Id"
@@ -57,7 +64,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
             android:gravity="center"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="@android:color/black" />
     </LinearLayout>
 
     <LinearLayout
@@ -71,6 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#0071bc"
             android:text="Volver al inicio" />
     </LinearLayout>
 </LinearLayout>

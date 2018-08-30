@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CEF5FF"
     android:orientation="vertical"
     tools:context=".pantallas.Configuracion">
 
@@ -54,7 +55,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="Duración de la partida:" />
+                android:text="Duración de la partida:"
+                android:textColor="@android:color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -95,7 +97,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:text="Número de intentos:" />
+                android:text="Número de intentos:"
+                android:textColor="@android:color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -131,7 +134,8 @@
                 android:id="@+id/textView8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tiempo de las palabras:" />
+                android:text="Tiempo de las palabras:"
+                android:textColor="@android:color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -161,6 +165,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#0071bc"
             android:text="Regresar al inicio" />
     </LinearLayout>
 
