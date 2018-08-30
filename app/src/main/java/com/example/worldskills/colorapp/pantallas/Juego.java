@@ -35,6 +35,7 @@ public class Juego extends AppCompatActivity {
         @Override
         public void run() {
             intentos.setText(String.valueOf(Integer.valueOf(intentos.getText().toString())-1));
+            finalizar();
             handler.removeCallbacks(runnable);
             llenarListas();
         }
@@ -108,8 +109,10 @@ public class Juego extends AppCompatActivity {
                 if(juego.get(i).equals(colorPalabra)){
                     palabrasCorrectas.setText(String.valueOf(Integer.valueOf(palabrasCorrectas.getText().toString())+1));
                 }
-                else
-                    intentos.setText(String.valueOf(Integer.valueOf(intentos.getText().toString())-1));
+                else {
+                    intentos.setText(String.valueOf(Integer.valueOf(intentos.getText().toString()) - 1));
+                    finalizar();
+                }
                 handler.removeCallbacks(runnable);
                 break;
             }
@@ -117,8 +120,11 @@ public class Juego extends AppCompatActivity {
         llenarListas();
     }
     public void finalizar(){
-        if(intentos.equals("0")){
-            Intent intent=new Intent(Juego.this,Resultados.class)
+        if(intentos.getText().toString().equals("0")){
+            Intent intent=new Intent(Juego.this,Resultados.class);
+            intent.putExtra("puntaje",palabrasCorrectas.getText().toString());
+            startActivity(intent);
+            finish();
         }
     }
 }
