@@ -162,13 +162,15 @@
                 android:id="@+id/boton1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:onClick="logica" />
 
             <Button
                 android:id="@+id/boton2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:onClick="logica" />
         </LinearLayout>
 
         <LinearLayout
@@ -181,13 +183,15 @@
                 android:id="@+id/boton3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:onClick="logica" />
 
             <Button
                 android:id="@+id/boton4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:onClick="logica" />
         </LinearLayout>
     </LinearLayout>
 
