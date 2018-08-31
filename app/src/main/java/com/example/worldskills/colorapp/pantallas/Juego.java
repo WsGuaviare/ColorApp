@@ -26,13 +26,15 @@ public class Juego extends AppCompatActivity {
     TextView tiempo,intentId,palabrasDesplegadas,palabrasCorrectas,intentos,palabra;
     Button boton1,boton2,boton3,boton4;
     ImageView volver,pausar;
-    ArrayList<Button> botonIds;
+    ArrayList<Button> botonIds;//este array contiene los id de los botones
     ArrayList<String> juego;
     ArrayList<ConfiguracionVo> listaConfiguracion;
-    ArrayList<String> palabraColores;
-    ArrayList<String> tintaColores;
-    String colorPalabra;
+    ArrayList<String> palabraColores;//este array contiene las palabras con su respectivo color
+    ArrayList<String> tintaColores;//este array contiene los colores que vamos a utilizar
+    String colorPalabra;//aca asignamos el color que queremos que lleve la palabra
     Handler handler=new Handler();
+
+    //con este runnable le damos el numero de intentos
     Runnable runnable=new Runnable() {
         @Override
         public void run() {
@@ -55,6 +57,8 @@ public class Juego extends AppCompatActivity {
         palabrasDesplegadas.setText("0");
         intentos.setText("3");
         tiempo.setText("00:00");
+
+        //pausamos la pantalla de juego
         pausar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,6 +92,8 @@ public class Juego extends AppCompatActivity {
 
 
     }
+
+    //llanamos los arrays con su respectiva informacion
     private void llenarListas(){
         palabraColores=new ArrayList<>();
         tintaColores=new ArrayList<>();
@@ -101,6 +107,8 @@ public class Juego extends AppCompatActivity {
         handler.postDelayed(runnable,3000);
         generarPalabra();
     }
+
+    //generamos la palabra de manera aleatoria
     private void generarPalabra(){
         Random rnd=new Random(System.currentTimeMillis());
         int palabraRandom=rnd.nextInt(4);
@@ -114,6 +122,8 @@ public class Juego extends AppCompatActivity {
         palabra.setTextColor(Color.parseColor(tintaColores.get(colorRandom)));
         generarBotones();
     }
+
+    //generamos los botones de manera aleatoria
     private void generarBotones(){
         Random rnd=new Random(System.currentTimeMillis());
         for(int i=0;i<4;i++) {
@@ -125,6 +135,8 @@ public class Juego extends AppCompatActivity {
             botonIds.get(botonRandom).setBackgroundColor(Color.parseColor(tintaColores.get(i)));
         }
     }
+
+    //proceso para sumar puntajes, verificar intentos, etc...
     public void logica(View view){
         for(int i=0;i<4;i++){
             if(findViewById(view.getId()).getId()==botonIds.get(i).getId()){
@@ -141,6 +153,8 @@ public class Juego extends AppCompatActivity {
         }
         llenarListas();
     }
+
+    //verificamos si ya perdio
     public void finalizar(){
         if(intentos.getText().toString().equals("0")){
             Intent intent=new Intent(Juego.this,Resultados.class);
@@ -153,6 +167,7 @@ public class Juego extends AppCompatActivity {
         }
     }
 
+    //inicializamos el temporisador, cuando el usuario lo activa
     public void temporizador(){
         CountDownTimer iniciarTemporizador = new CountDownTimer(10000,1000) {
             @Override

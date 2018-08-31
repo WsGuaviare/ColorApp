@@ -41,8 +41,12 @@ public class Resultados extends AppCompatActivity {
         palabrasDesplegadas.setText(palabrasDesplegadasInt);
         tiempo.setText(tiempoInt);
         porcentaje.setText(String.valueOf((Integer.valueOf(palabrasCorrectasInt)*100)/Integer.valueOf(palabrasDesplegadasInt))+"%");
+
+        //llamamos al crud para realizar una consulta
         Crud crud=new Crud(this,"colores",null,1);
         crud.consultarPuntajes(this,listaPuntajes);
+
+        //traemos la informacion para mostrarsela al usuario en la pantalla resultado
         for(int i=0;i<4;i++){
             if(Integer.valueOf(palabrasCorrectasInt)>=Integer.valueOf(listaPuntajes.get(i))){
                 ContentValues registro=new ContentValues();

@@ -48,14 +48,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="cargar partida por defecto" />
+            android:background="#0071bc"
+            android:text="cargar partida por defecto"
+            android:layout_margin="5dp"
+            />
 
         <Button
             android:id="@+id/cargarPersonalizada"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="cargar partida personalizada" />
+            android:background="#0071bc"
+            android:text="cargar partida personalizada"
+            android:layout_margin="5dp"
+            />
     </LinearLayout>
 
     <LinearLayout
