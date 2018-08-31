@@ -31,6 +31,7 @@ public class Juego extends AppCompatActivity {
     ArrayList<ConfiguracionVo> listaConfiguracion;
     ArrayList<String> palabraColores;
     ArrayList<String> tintaColores;
+    int ids=-1;
     String colorPalabra;
     Handler handler=new Handler();
     Runnable runnable=new Runnable() {
@@ -51,10 +52,16 @@ public class Juego extends AppCompatActivity {
         tiempo=findViewById(R.id.timepoId);intentId=findViewById(R.id.intentId);palabrasDesplegadas=findViewById(R.id.palabrasDesplegadas);palabrasCorrectas=findViewById(R.id.palabrasCorrectas);intentos=findViewById(R.id.intentos);palabra=findViewById(R.id.palabra);
         botonIds.add(boton1=findViewById(R.id.boton1));botonIds.add(boton2=findViewById(R.id.boton2));botonIds.add(boton3=findViewById(R.id.boton3));botonIds.add(boton4=findViewById(R.id.boton4));
         volver=findViewById(R.id.volver);pausar=findViewById(R.id.pausar);
+        //configuracion
+        Crud crud=new Crud(this,"colores",null,1);
+        crud.consultarConfiguracion(this,listaConfiguracion);
         palabrasCorrectas.setText("0");
         palabrasDesplegadas.setText("0");
-        intentos.setText("3");
-        tiempo.setText("00:00");
+        if(listaConfiguracion.get(1).getcDefault().equals("0")){
+            ids=0;
+        }else ids=1;
+        intentos.setText(listaConfiguracion.get(ids).getIntentos());
+        tiempo.setText(listaConfiguracion.get(ids).getTiempo());
         pausar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,13 +82,11 @@ public class Juego extends AppCompatActivity {
                 }
             }
         });
-        //configuracion
-        Crud crud=new Crud(this,"colores",null,1);
-        crud.consultarConfiguracion(this,listaConfiguracion);
         llenarListas();
         volver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                handler.removeCallbacks(runnable);
                 finish();
             }
         });
@@ -98,7 +103,9 @@ public class Juego extends AppCompatActivity {
             juego.add("0");
         }
         palabrasDesplegadas.setText(String.valueOf(Integer.valueOf(palabrasDesplegadas.getText().toString())+1));
-        handler.postDelayed(runnable,3000);
+
+
+        handler.postDelayed(runnable,Integer.valueOf(listaConfiguracion.get(ids).getTiempoPalabra()));
         generarPalabra();
     }
     private void generarPalabra(){

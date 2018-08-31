@@ -53,7 +53,7 @@ public class Configuracion extends AppCompatActivity {
             public void onClick(View v) {
                 ContentValues cambiar=new ContentValues();
                 cambiar.put("cDefault","0");
-                crud.modificarBd(Configuracion.this,"tb_configuracion","1",cambiar);
+                crud.modificarBd(Configuracion.this,"tb_configuracion","2",cambiar);
             }
         });
         cargarPersonalizada.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +61,7 @@ public class Configuracion extends AppCompatActivity {
             public void onClick(View v) {
                 ContentValues cambiar=new ContentValues();
                 cambiar.put("cDefault","1");
-                crud.modificarBd(Configuracion.this,"tb_configuracion","1",cambiar);
+                crud.modificarBd(Configuracion.this,"tb_configuracion","2",cambiar);
             }
         });
         aplicar.setOnClickListener(new View.OnClickListener() {
