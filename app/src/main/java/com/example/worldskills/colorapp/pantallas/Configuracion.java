@@ -18,12 +18,13 @@ public class Configuracion extends AppCompatActivity {
     CheckBox tiempo;
     int intTime;
     EditText duracionPartida,numeroIntentos,tiempoPalabras;
-    Button volver,cargarDefault,cargarPersonalizada;
+    Button volver,cargarDefault,cargarPersonalizada,aplicar;
     ArrayList<ConfiguracionVo> listaConfiguracion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion);
+        aplicar=findViewById(R.id.aplicarId);
         cargarDefault=findViewById(R.id.cargarDefault);
         cargarPersonalizada=findViewById(R.id.cargarPersonalizada);
         listaConfiguracion=new ArrayList<>();
@@ -52,7 +53,7 @@ public class Configuracion extends AppCompatActivity {
             public void onClick(View v) {
                 ContentValues cambiar=new ContentValues();
                 cambiar.put("cDefault","0");
-                crud.modificarBd(Configuracion.this,"tb_configuracion","1",cambiar);
+                crud.modificarBd(Configuracion.this,"tb_configuracion","2",cambiar);
             }
         });
         cargarPersonalizada.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +61,19 @@ public class Configuracion extends AppCompatActivity {
             public void onClick(View v) {
                 ContentValues cambiar=new ContentValues();
                 cambiar.put("cDefault","1");
-                crud.modificarBd(Configuracion.this,"tb_configuracion","1",cambiar);
+                crud.modificarBd(Configuracion.this,"tb_configuracion","2",cambiar);
+            }
+        });
+        aplicar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ContentValues registro=new ContentValues();
+                registro.put("intTime",intTime);
+                registro.put("tiempo",duracionPartida.getText().toString());
+                registro.put("intentos",numeroIntentos.getText().toString());
+                registro.put("tiempoPalabra",tiempoPalabras.getText().toString());
+                registro.put("cDefault","1");
+                crud.modificarBd(Configuracion.this,"tb_configuracion","2",registro);
             }
         });
     }
