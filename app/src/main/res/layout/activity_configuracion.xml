@@ -193,7 +193,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#0071bc"
-            android:text="Regresar al inicio" />
+            android:text="Regresar al inicio"
+            android:layout_margin="5dp"
+            />
 
         <Button
             android:id="@+id/aplicarId"
@@ -201,7 +203,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#0071bc"
-            android:text="Aplicar" />
+            android:text="Aplicar"
+            android:layout_margin="5dp"
+            />
     </LinearLayout>
 
 </LinearLayout>

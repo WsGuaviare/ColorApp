@@ -33,6 +33,8 @@ public class Configuracion extends AppCompatActivity {
         numeroIntentos=findViewById(R.id.numeroIntentos);
         tiempoPalabras=findViewById(R.id.tiempoPalabras);
         volver=findViewById(R.id.volver);
+
+        //verificamos el estado del checkbox
         if(tiempo.isChecked()){
             intTime=1;
         }
@@ -43,6 +45,8 @@ public class Configuracion extends AppCompatActivity {
                 finish();
             }
         });
+
+        //llamado a la base de datos para saber la configuracion anterior
         final Crud crud=new Crud(this,"colores",null,1);
         crud.consultarConfiguracion(this,listaConfiguracion);
         duracionPartida.setHint(listaConfiguracion.get(0).getTiempo());
